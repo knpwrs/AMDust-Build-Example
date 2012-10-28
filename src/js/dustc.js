@@ -2713,7 +2713,7 @@ define(['./dust'], function (dust) {
 				return load(parsed.name);
 			}
 			(function (done) {
-				if (typeof process !== undefined && process.title === 'node') {
+				if (typeof process !== 'undefined' && process.title === 'node') {
 					var fileName = require.nodeRequire('path').join(config.baseUrl, parsed.file);
 					done(require.nodeRequire('fs').readFileSync(fileName, 'utf8'));
 				} else if (typeof XMLHttpRequest !== undefined) {
